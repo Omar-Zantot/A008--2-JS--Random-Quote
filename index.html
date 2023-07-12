@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuoteApp</title>
+    <!-- & link for icon -->
+    <link rel="icon" href="imgs/quotes.ico" />
+
+    <!-- ! ____________________ {CSS Links} ____________________ -->
+
+    <!-- * ======== FontAsome Sheet -->
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <!-- * ======== bootstarp Sheet -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <!-- * ======== My style Sheet -->
+    <link rel="stylesheet" href="CSS/style.css" />
+
+    <!-- ! ____________________ {CSS Links} ____________________ -->
+  </head>
+  <body class="bg-dark-subtle">
+    <section id="QuoteS" class="QuoteS w-100 pt-4">
+      <div class="container">
+        <div class="row">
+          <div class="MyQuote">
+            <div class="text-center">
+              <h1 class="display-6 fw-bold mt-5 mb-3">Quote of the Day</h1>
+              <p class="fs-2 fw-normal mt-1 mb-5">
+                Press the button below to recieve a random quote!
+              </p>
+              <button
+                onclick="generateRandomQuote()"
+                class="btn btn-outline-info fs-4 rounded-pill p-2 px-5"
+              >
+                New Quote
+              </button>
+              <div class="quoteContent lead fs-4 my-5">
+                <p id="quoteOut"></p>
+                <p id="author"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+  </body>
+</html>
+
+<!-- & link JS -->
