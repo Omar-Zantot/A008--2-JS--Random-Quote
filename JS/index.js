@@ -108,8 +108,7 @@ function getRandomNumber() {
 
 function generateRandomQuote() {
   var randomNumber = getRandomNumber();
-
-    console.log(randomNumber);
+  // console.log(randomNumber);
   var randomQuote = quoteContainer[randomNumber];
   var quote = randomQuote.quote;
   var author = randomQuote.author;
