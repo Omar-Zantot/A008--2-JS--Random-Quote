@@ -61,25 +61,47 @@ var quoteContainer = [
   },
 ];
 
-var usedIndices = [];
+// TODO : solution one
+
+// var usedIndices = [];
+
+// function getRandomNumber() {
+//   ^  1- generate a random number
+//   var randomNumber = Math.floor(Math.random() * quoteContainer.length);
+
+//   ^ 2- Check if the random number is in the usedIndices array
+//   while (usedIndices.includes(randomNumber)) {
+//      ^ Generate a new random number
+//     randomNumber = Math.floor(Math.random() * quoteContainer.length);
+//   }
+
+//   ^ 3- Add the current random number to the usedIndices array
+//   usedIndices.push(randomNumber);
+
+//   ^ 4- If all quotes have been used, reset the usedIndices array
+//   if (usedIndices.length === quoteContainer.length) {
+//     usedIndices = [];
+//   }
+
+//   return randomNumber;
+// }
+
+// TODO: Solution 2
+
+var lastRandomNumber = -1;
 
 function getRandomNumber() {
-  // TODO: 1- generate a random number
+  //TODO: 1- generate a random number
   var randomNumber = Math.floor(Math.random() * quoteContainer.length);
 
-  // TODO: 2- Check if the random number is in the usedIndices array
-  while (usedIndices.includes(randomNumber)) {
-    //^ Generate a new random number
+  //TODO: 2- Check if the random number === lastRandomNumber
+  while (randomNumber === lastRandomNumber) {
+    // ^ Generate a new random number
     randomNumber = Math.floor(Math.random() * quoteContainer.length);
   }
 
-  // TODO: 3- Add the current random number to the usedIndices array
-  usedIndices.push(randomNumber);
-
-  // TODO: 4- If all quotes have been used, reset the usedIndices array
-  if (usedIndices.length === quoteContainer.length) {
-    usedIndices = [];
-  }
+  //TODO: 3- Update the last random number
+  lastRandomNumber = randomNumber;
 
   return randomNumber;
 }
@@ -87,7 +109,7 @@ function getRandomNumber() {
 function generateRandomQuote() {
   var randomNumber = getRandomNumber();
 
-//   console.log(randomNumber);
+    console.log(randomNumber);
   var randomQuote = quoteContainer[randomNumber];
   var quote = randomQuote.quote;
   var author = randomQuote.author;
@@ -96,4 +118,3 @@ function generateRandomQuote() {
   document.getElementById("quoteOut").innerHTML = quote;
   document.getElementById("author").innerHTML = author;
 }
-
